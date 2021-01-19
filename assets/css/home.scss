@@ -1,0 +1,93 @@
+---
+---
+
+main {
+  padding: 1em;
+  max-width: 100em;
+  margin: 0 auto;
+
+  // Primary heading
+  h1:first-child {
+    text-align: center;
+    margin-top: 4rem;
+    width: 100%;
+    font-size: 3em;
+
+    // Intro paragraph
+    & + p {
+      max-width: 800px;
+      margin: 1em auto 3em;
+    }
+  }
+
+  // Secondary headings
+  h2 {
+    text-align: center;
+    margin: 3em 0 0;
+  }
+
+  // Cards
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 2em auto;
+
+    // Common card styles
+    li {
+      padding: 1em;
+      margin: 0.8em;
+      border: 1px solid #ccc;
+      border-radius: .25em;
+      display: flex;
+      flex: 1 1 10em;
+      min-width: 10em;
+      max-width: 20em;
+
+      strong {
+        display: block;
+        text-align: center;
+      }
+
+      a {
+        display: block;
+        padding: 0.5em 0;
+      }
+    }
+
+    // Primary cards
+    &:nth-of-type(1) > li > p {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+
+      strong {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+      }
+
+      // Style links in primary cards as buttons
+      a {
+        border-radius: .25em;
+        background: #55bb55;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        margin: 1em 0 0.5em;
+      }
+    }
+
+    // Secondary cards
+    &:nth-of-type(2) > li {
+      strong {
+        font-size: 1.1em;
+      }
+
+      a::after {
+        content: ' →';
+      }
+    }
+  }
+}
