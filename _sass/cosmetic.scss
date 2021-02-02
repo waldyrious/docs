@@ -1,0 +1,158 @@
+body {
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+
+  & > a:first-child {
+    font-weight: normal;
+    text-decoration: none;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 21.5px;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  #logo {
+    width: $nav-width;
+    border-bottom: $border;
+    display: flex;
+    align-items: center;
+    & > a {
+      display: block;
+      height: 75px;
+      width: 100%;
+      margin: 1em;
+      background-image: url("/assets/images/logo.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      &::after{
+        display: block;
+        position: relative;
+        content: 'Developer Portal';
+        top: 60px;
+        left: 80px;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+a {
+  color: $uphold-green;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+blockquote {
+  background-color: #eee;
+  border-left: 5px solid #ccc;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  p { margin: 0; }
+}
+
+// Code tags
+p > code {
+  background: #eee;
+  padding: 0.3em 0.5em;
+  border-radius: 2px;
+}
+
+// Code blocks
+div.highlight {
+  border-radius: 7px;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+
+  .nl {
+    font-weight: normal;
+  }
+
+  pre {
+    overflow: scroll;
+    white-space: pre-wrap;
+    max-height: 60vh;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  background-color: #fffcf0;
+  width: 100%;
+  th, td { padding: .5em 1em; text-align: left; border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+  th, thead, tfoot { background: #f9f9f9; font-weight: normal; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit;
+  color: #4e5e66;
+}
+
+// Slate-specific aside. To be replaced by cleaner markup
+main > aside.notice {
+  background: #e1f1ff;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  margin: 1em 0;
+}
+
+main {
+  padding: $main-padding;
+}
+
+nav {
+  // background-color: #f5f5f5;
+  background-color: #fcfcfc;
+  border-right: $border;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// OpenAPI styles
+
+// Colors for operation methods
+.text-danger { color: #dc3545;}
+.text-success { color: #28a745;}
+.text-dark { color: #343a40;}
+.text-warning { color: #ffc107;}
+.text-primary { color: #007bff;}
+.text-secondary { color: #6c757d;}
+h3 > span { font-weight: bold; }
+
+
+fieldset {
+  // border: $border;
+  border: none; // the border has a hole to fit the legend
+  background-color: rgba(100, 150, 200, 10%);
+  // background-color: aliceblue;
+  margin: 2em 0 0;
+  border-radius: 0 7px 7px 7px;
+
+  legend {
+    // Tab-like:
+    background-color: inherit;
+    padding: 0.5em 0.7em 0;
+    // border: $border;
+    border-radius: 7px 7px 0 0;
+    border-bottom: none;
+    position: relative;
+    bottom: 1em;
+    left: -12px;
+
+    // // Title-like:
+    // position: relative;
+    // bottom: 1em;
+    // left: -1em;
+    // &::after { content: ':'; }
+  }
+}

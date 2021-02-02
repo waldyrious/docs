@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <title>{{ site.title }}</title>
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}" />
+    <link rel="stylesheet" href="{{ "/assets/css/uphold.css?v=" | append: site.github.build_revision | relative_url }}" />
+    {% if page.url == '/' and page.path == 'index.md' %}
+    <link rel="stylesheet" href="{{ "/assets/css/home.css?v=" | append: site.github.build_revision | relative_url }}" />
+    {% endif%}
+  </head>
+  <body>
+    <header>
+      <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/logo.png' | relative_url }}" width="100px" alt="Uphold"/> Developer Portal</a>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <nav>
+      {% assign root_dirs = '' | split: ',' %}
+      <ul>
+        {% assign curr_dir = '' %}
+        {% assign pgs = site.pages | where: 'layout', 'page' | sort: 'dir' %}
+
+        {% for pg in pgs %}
+
+          {% assign dir = pg.path | remove: pg.name | split: '/' %}
+          {% assign root_dirs = root_dirs | push: dir[0] %}
+
+          {% if curr_dir == '' %}
+            <details open="true"><summary>{{ dir[0] | capitalize | default: 'Root' }}</summary>
+              <ul>
+          {% elsif curr_dir != dir[0] %}
+              </ul>
+            </details>
+            <details open="true"><summary>{{ dir[0] | capitalize | default: 'Root' }}</summary>
+              <ul>
+          {% endif %}
+
+          <li {% if pg.url == page.url %} class="active" {% endif %}>
+            <a href="{{ pg.url | relative_url | remove: '.html' }}">{{ pg.title | default: pg.name }}</a>
+          </li>
+
+          {% assign curr_dir = dir[0] %}
+
+        {% endfor %}
+              </ul>
+            </details>
+      </ul>
+    </nav>
+  </body>
+</html>

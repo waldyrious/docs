@@ -1,0 +1,52 @@
+nav a:hover {
+  text-decoration: none;
+}
+
+nav > ul > details {
+  & > summary {
+    cursor: pointer;
+    font-weight: normal;
+    color: #555;
+    // list-style: none;
+    // &::-webkit-details-marker { display: none; } // Chrome and other Blink-based browsers
+    &:focus { outline: none; }
+  }
+  summary, li > a {
+    padding: 0.3em;
+    display: block list-item;
+    padding-left: 1em;
+  }
+  summary:hover, li:hover {
+    background: rgba(100, 100, 100, 0.1);
+    border-right: 3px solid #bbb;
+  }
+  li.active {
+    border-right: 3px solid $uphold-green;
+  }
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      margin-left: 1em;
+    }
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: $header-height;
+  height: calc(100% - #{$header-height});
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: $nav-width;
+}
+
+nav > ul {
+  width: $nav-width;
+  margin: 3em 0 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

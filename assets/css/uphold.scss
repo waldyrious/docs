@@ -1,0 +1,28 @@
+---
+---
+
+@import 'variables';
+
+body {
+  margin: 0;
+}
+
+header {
+  height: $header-height;
+  border-bottom: $border;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+main {
+  max-width: $content-width;
+  margin-left: calc(#{$nav-width} + max((100% - #{$content-width} - #{$nav-width}) / 2, 0px));
+}
+
+@import 'cosmetic';
+
+@import 'sidebar';
+
+@import 'one-dark';

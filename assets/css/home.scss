@@ -1,10 +1,12 @@
 ---
 ---
 
+@import 'variables';
+
 main {
-  padding: 1em;
-  max-width: 100em;
-  margin: 0 auto;
+  // Override main styles
+  max-width: unset;
+  margin-left: $nav-width;
 
   // Primary heading
   h1:first-child {
@@ -12,12 +14,12 @@ main {
     margin-top: 4rem;
     width: 100%;
     font-size: 3em;
+  }
 
-    // Intro paragraph
-    & + p {
-      max-width: 800px;
-      margin: 1em auto 3em;
-    }
+  // Paragraphs
+  & > p {
+    max-width: $content-width;
+    margin: 1em auto 3em;
   }
 
   // Secondary headings
@@ -38,8 +40,9 @@ main {
     li {
       padding: 1em;
       margin: 0.8em;
-      border: 1px solid #ccc;
+      border: $border;
       border-radius: .25em;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, .15);
       display: flex;
       flex: 1 1 10em;
       min-width: 10em;
