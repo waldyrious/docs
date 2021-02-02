@@ -1,1 +1,6 @@
 title: Uphold Developer Portal
+
+# Just-the-docs theme: https://pmarsceill.github.io/just-the-docs/
+remote_theme: pmarsceill/just-the-docs
+logo: "/assets/images/logo.png"
+color_scheme: uphold

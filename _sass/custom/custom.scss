@@ -1,0 +1,68 @@
+// TODO: remake these using JTD's utilities
+main, div[role=main] {
+
+  // Primary heading
+  h1#uphold-developer-portal {
+    text-align: center;
+    width: 100%;
+    font-size: 3em;
+
+    // Intro paragraph
+    & + p {
+      max-width: 60%;
+      margin: 1em auto 3em;
+    }
+
+    // Secondary headings
+    & ~ h2 {
+      text-align: center;
+    }
+
+    & ~ ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      // Common card styles
+      li {
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: .25em;
+        background: white;
+        display: flex;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      // Primary cards
+      &:nth-of-type(1) {
+        // max-width: 80%;
+        margin: 3em auto;
+        padding: 0;
+
+        li {
+          flex-basis: calc((100% / 4) - 1rem);
+          // min-width: 15em;
+          // max-width: 30em;
+        }
+
+        // Style links in primary cards as buttons
+        a {
+          @extend .btn, .btn-primary, .d-block;
+        }
+      }
+
+      // Secondary cards
+      &:nth-of-type(2) {
+        max-width: 60%;
+        margin: 2em auto;
+
+        li {
+          flex-basis: calc((100% / 3) - 1rem);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+// Adjust green color scale
+$green-000: hsl(140, 40%, 55%);
+$green-100: hsl(140, 60%, 45%);
+$green-200: hsl(140, 80%, 35%);
+$green-300: hsl(140, 100%, 25%);
+
+$grey-lt-000: #f5f5f5;
+$grey-lt-100: #eeeeee;
+$grey-lt-200: #ececec;
+$grey-lt-300: #e6e6e6;
+
+$link-color: $green-000;
+$btn-primary-color: $green-100;
+
+// Note: we could redefine the sidebar color by assigning $sidebar-color, or the grey tones;
+// but the cascading of variables appears to happen before the processing of custom color themes,
+// so we have to effectively replicate that cascading manually.
+// $grey-000: #fedcba;
+
+$sidebar-color: $grey-lt-000;
+$feedback-color: darken($sidebar-color, 3%);
+// $code-background-color: $grey-lt-000;
+// $border-color: $grey-lt-100;
